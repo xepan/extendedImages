@@ -10,7 +10,8 @@ class page_extendedImages_page_owner_savesvg extends page_extendedImages_page_ow
 		}
 		$svg = $_POST['output_svg'];
 		$filename = $_POST['filename'];//(isset($_POST['filename']) && !empty($_POST['filename']) ? preg_replace('@[\\\\/:*?"<>|]@u', '_', $_POST['filename']) : 'saved') . '.svg'; // These characters are indicated as prohibited by Windows
-		$filename = str_replace("../", "", $filename);
+		$filename = str_replace("..%2F", "", $filename);
+		
 		$fh = fopen(getcwd().'/'.$filename, 'w') or die("Can't open file");
 		fwrite($fh, $svg);
 		fclose($fh);

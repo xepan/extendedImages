@@ -23,8 +23,8 @@ svgEditor.addExtension("php_savefile", {
 		svgEditor.setCustomHandlers({
 			save: function(win, data) {
 				var svg = '<?xml version="1.0" encoding="UTF-8"?>\n' + data,
-					filename = getFileNameFromTitle();
-
+					filename = decodeURI(getFileNameFromTitle());
+							
 				$.post(save_svg_action, {output_svg: svg, filename: filename})
 					.done(function( ret){
 						if(ret == 'saved')

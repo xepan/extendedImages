@@ -50,8 +50,10 @@ $('#xsvg_edit_btn').click(function(event) {
 	// $('#xepan-image-svg-option-src').error(function(){
 	// 	alert('image not exist');
 	// });
-
-	window.open("epan-components/extendedImages/templates/svgEditor/editor/svg-editor.html?url=../../../../../"+ $('#xepan-image-svg-option-src').val() +"&dimensions=500,400&canvas_expansion=5&initFill[color]=0000FF");
+	var url = "epan-components/extendedImages/templates/svgEditor/editor/svg-editor.html?url=..%2F..%2F..%2F..%2F..%2F"+ $('#xepan-image-svg-option-src').val() +"&dimensions=500,400&canvas_expansion=5&initFill[color]=0000FF";
+	// url = encodeURI(url);
+	// alert(url);
+	window.open(url);
 });
 
 $('#xepan-image-svg-option-select').click(function(event) {
