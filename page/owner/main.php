@@ -2,7 +2,7 @@
 
 class page_extendedImages_page_owner_main extends page_componentBase_page_owner_main {
 	function initMainPage(){
-		$this->add('H3')->setHTML('Component Owner Main Page<small> NO Option At Backend</small>');
+		$this->add('H3')->setHTML('<i class="fa fa-picture-o"></i> '.$this->component_name.'<small> Images with magics</small>');
 	}
 
 
